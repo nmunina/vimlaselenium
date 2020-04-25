@@ -23,7 +23,8 @@ public class SeleniumNewUser {
     static String actualResult;
     static String message;
 
-    //@Test
+    //@Test //to run Selenium separatly uncomment lines 26, 28, 87, 90
+            //comment lines 29, 86, 91
     //public void  createUser() {
     public static String  createUser(String email, String username, String password, String confirmedPassword, String expectedResult) {
         Random rnd = new Random();
@@ -86,7 +87,7 @@ public class SeleniumNewUser {
         //driver.close();
 
     }
-
+    //protected void sleep ( int i) {
     protected static void sleep ( int i) {
         try {
             Thread.sleep(i * 1000);
