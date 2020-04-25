@@ -8,7 +8,7 @@ import sun.security.util.PendingException;
 
 import java.util.List;
 
-public class TestNewUser {
+public class NewUserTest {
     String email;
     String username;
     String password;
