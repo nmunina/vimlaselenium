@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.Random;
@@ -24,9 +25,9 @@ public class SeleniumNewUser {
     static String message;
 
     //@Test //to run Selenium separatly uncomment lines 26, 28, 87, 90
-            //comment lines 29, 86, 91
+    //comment lines 29, 86, 91
     //public void  createUser() {
-    public static String  createUser(String email, String username, String password, String confirmedPassword, String expectedResult) {
+    public static String createUser(String email, String username, String password, String confirmedPassword, String expectedResult) {
         Random rnd = new Random();
 
         //select scenario
@@ -43,8 +44,8 @@ public class SeleniumNewUser {
         sleep(4);
 
         // confirm cookies
-        //wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("cookie-continue-btn"))).click();
-        driver.findElement(By.id("cookie-continue-btn")).click();
+        wait.until(ExpectedConditions.presenceOfElementLocated(By.id("cookie-continue-btn"))).click();
+        //driver.findElement(By.id("cookie-continue-btn")).click();
         sleep(2);
 
         //This is just to show different types of element location.
@@ -87,8 +88,9 @@ public class SeleniumNewUser {
         //driver.close();
 
     }
+
     //protected void sleep ( int i) {
-    protected static void sleep ( int i) {
+    protected static void sleep(int i) {
         try {
             Thread.sleep(i * 1000);
         } catch (InterruptedException e) {
@@ -96,3 +98,4 @@ public class SeleniumNewUser {
         }
     }
 }
+
